@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid?styles=24573" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/c64cb6bab9.js" crossorigin="anonymous"></script>
+    <header>
+
+        <h1><a href="javascript:window.location.reload(true)"><img
+                    src="https://fontmeme.com/permalink/231102/187efe9a23703852ffc83845a6e0fdb1.png" alt="pokemon-font"
+                    border="0"></a></h1>
+        <div class="buscadorPokemon">
+            <input type="text" id="nombre" placeholder="Search your pokémon...">
+            <button id="buscar">Search</button>
+        </div>
+    </header>
+
+<body>
+    <audio src="./PokemonMusic.mp3" autoplay="autoplay" loop="loop" id="myMusic"></audio>
+    <div>
+        <a href="#0" class="popup-trigger icon-botton">?</a>
+        <div class="popup" role="alert">
+            <div class="popup-container">
+                <div class="popup-container-content">
+                    <h4>Instrucciones</h4>
+                    <p>
+
+                        "¡Mirá vó', te presento mi proyecto de Pokémon! En esta movida que armé, creé una página web que te permite buscar información sobre los Pokémon más picantes.
+                        
+                        En la página principal, armé un quilombo con un formulario para que puedas poner el nombre de un Pokémon. Cuando le des al botoncito de buscar, mi proyecto se pone las pilas y hace una consulta a la API de Pokémon para traer los datos del bicho que estás buscando.
+                        
+                        Con esos datos, armé una ficha re groso con la info clave, como el nombre, la altura, el peso y las estadísticas de combate del Pokémon. Además, le di un toque personalizado a la ficha, resaltando el tipo del Pokémon con unos colores copados que representan cada tipo.
+                        
+                        Para hacer todo esto, me mandé con el HTML para darle forma a la página, el CSS para ponerle estilo a los elementos y el JavaScript para hacer las movidas con la API y manipular los datos. También me agarré un archivo JSON con información sobre los Pokémon para hacer más fácil la búsqueda.
+                        
+                        Mi proyecto no es puro cháchara, che. Tiene una interfaz de primera, con colores y estilos que le dan el toque bien Rosarino.
+                        
+                        " </p>
+                </div>
+                <div class="popup-container-content">
+                    <h4>Contacto</h4>
+                    <p>linkedin.com/in/
+                    </p>
+                </div>
+                <a href="#0"><i class="fa fa-times-circle popup-close fa-2x"></i></a>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+
+    <script src="./help.js"></script>
+</body>
+<footer>
+
+    <p> Pokedex © 2023 - Francisco Ruiz de Temiño - Todos los derechos reservados</p>
+</footer>
+
+</html>
