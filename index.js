@@ -23,7 +23,8 @@ document.getElementById("buscar").addEventListener("click", async () => {
   let nombrePokemon = document.getElementById("nombre");
   let valor = nombrePokemon.value.toLowerCase();
 
-  await buscarUrlRegion(valor);
+
+
 
   await buscarPokemon(valor);
 
@@ -67,7 +68,9 @@ const buscarPokemon = async (valor) => {
     let dataDos = resultados[i].name;
 
     await agregarFicha(dataDos);
+    
   }
+  
 };
 
 const buscarUrl = async (valor) => {
@@ -80,6 +83,8 @@ const buscarUrl = async (valor) => {
 const buscarUrlRegion = async (valor) => {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${valor}/encounters`);
   const dataTres = await response.json();
+   
+  
   console.log(dataTres);
   return dataTres;
   
@@ -137,8 +142,15 @@ const agregarFicha = async (valor) => {
   const speed = crearElemento("p", "velocidad", dataDosObj.stats[5].base_stat);
 
 
+  const region =
+  dataTres.length === 0
+  ? crearElemento("p", "region", "unkonwn")
+      : crearElemento
+        ("p", "region", dataTres[0].location_area.name);
 
- const region = crearElemento("p", "region", dataTres[0].location_area.name);
+ 
+
+
 
 
 
@@ -148,10 +160,9 @@ const agregarFicha = async (valor) => {
       : crearElemento(
           "p",
           "tipo",
-          dataDosObj.types[0].type.name + " & " + dataDosObj.types[1].type.name
-        );
-  tipo.style.backgroundColor =
-    typeColors[dataDosObj.types[0].type.name || dataDosObj.types[1].type.name];
+          dataDosObj.types[0].type.name + " & " + dataDosObj.types[1].type.name);
+
+  tipo.style.backgroundColor = typeColors[dataDosObj.types[0].type.name || dataDosObj.types[1].type.name];
 
   const imagen = crearElemento("img", null, null);
 if (imagen.src = dataDosObj.sprites.front_default && dataDosObj.sprites.front_default !== null) {
